@@ -18,6 +18,13 @@ app.get('/users/:id', async (req, res) => {
 });
 
 module.exports = app;
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  if (email === 'a@test.fr' && password === 'secret') {
+    return res.sendStatus(200);
+  }
+  res.sendStatus(401);
+});
 
 
 
